@@ -2,10 +2,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block start %}
-
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
 
+{% block start %}
 <div class="login-page">
 
     <div class="login-card register-card">
@@ -20,14 +21,16 @@
         <!-- Registration Form -->
         <form method="POST">
             {% csrf_token %}
+                {% if messages %}
+            <div class="alert theme-primary" role="alert">
+                 {% for message in messages %}
+              {{ message }}
 
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="login-message">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
+        
+           {% endfor %}
+           </div>
+
+{% endif %}
 
             <!-- Full Name -->
             <div class="login-field">
