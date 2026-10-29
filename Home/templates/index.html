@@ -1,0 +1,177 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block start %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+
+
+<!-- =========================
+     Hero Section
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            🍳 Share. Discover. Cook.
+        </span>
+
+        <h1>
+            Discover Your Next
+            <span>Favorite Recipe.</span>
+        </h1>
+
+        <p>
+            Explore delicious recipes, discover new flavors,
+            and share your favorite dishes with a community
+            of food lovers.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'login' %}" class="primary-btn">
+                Explore Recipes →
+            </a>
+
+            <a href="{% url 'register' %}" class="secondary-btn">
+                Join Our Community
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="food-emoji">
+            🍲
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Features Section
+========================= -->
+
+<section class="features">
+
+    <h2>
+        Everything You Need to Cook Better
+    </h2>
+
+    <p>
+        Discover, create and share delicious recipes.
+    </p>
+
+
+    <div class="feature-container">
+
+
+        <!-- Feature 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔍
+            </div>
+
+            <h3>
+                Discover Recipes
+            </h3>
+
+            <p>
+                Explore a variety of recipes and discover
+                new dishes to try at home.
+            </p>
+
+        </div>
+
+
+        <!-- Feature 2 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📝
+            </div>
+
+            <h3>
+                Share Your Recipes
+            </h3>
+
+            <p>
+                Add your favorite recipes and share your
+                cooking ideas with other food lovers.
+            </p>
+
+        </div>
+
+
+        <!-- Feature 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Save Your Favorites
+            </h3>
+
+            <p>
+                Keep your favorite recipes organized and
+                easily find them whenever you want to cook.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Call To Action
+========================= -->
+
+<section class="cta">
+
+    <h2>
+        Have a Recipe to Share?
+    </h2>
+
+    <p>
+        Share your favorite dish and inspire others
+        to create something delicious.
+    </p>
+
+    <a href="{% url 'recepie' %}">
+        Add Your Recipe
+    </a>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 RecipeHub. All rights reserved.
+    </p>
+
+</footer>
+
+
+{% endblock %}

@@ -2,8 +2,6 @@
 # Python virtual environment folder
 env/
 
-# Home folder
-Home/
 
 # Django database
 db.sqlite3

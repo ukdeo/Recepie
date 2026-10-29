@@ -1,0 +1,80 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block start %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="about-hero-content">
+        <span class="about-tag">OUR STORY</span>
+        <h1>Bringing People Together Through <span>Food.</span></h1>
+        <p>
+            RecipeHub is a place where food lovers can discover new dishes,
+            share their favorite recipes, and inspire others to enjoy cooking.
+        </p>
+        <a href="{% url 'login' %}" class="about-btn">
+            Explore Recipes →
+        </a>
+    </div>
+
+    <div class="about-hero-image">
+        <span>👨‍🍳</span>
+        <div class="image-caption">
+            <strong>Made with passion</strong>
+            <p>Shared with everyone.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Mission -->
+<section class="mission-section">
+    <div class="section-heading">
+        <span>WHY RECIPEHUB?</span>
+        <h2>Our Mission</h2>
+        <p>
+            We believe every recipe has a story, and every person has
+            something delicious worth sharing.
+        </p>
+    </div>
+
+    <div class="mission-grid">
+        <div class="mission-card">
+            <div class="mission-icon">🍲</div>
+            <h3>Discover</h3>
+            <p>
+                Explore recipes, discover new flavors, and find inspiration
+                for your next meal.
+            </p>
+        </div>
+
+        <div class="mission-card">
+            <div class="mission-icon">📝</div>
+            <h3>Share</h3>
+            <p>
+                Publish your favorite dishes and share your cooking ideas
+                with fellow food lovers.
+            </p>
+        </div>
+
+        <div class="mission-card">
+            <div class="mission-icon">❤️</div>
+            <h3>Connect</h3>
+            <p>
+                Build a community around food, creativity, and the joy
+                of cooking together.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Closing CTA -->
+<section class="about-cta">
+    <h2>Your Next Favorite Recipe Starts Here.</h2>
+    <p>Join RecipeHub and share something delicious with the world.</p>
+    <a href="{% url 'register' %}">Join Our Community →</a>
+</section>
+
+{% endblock %}
