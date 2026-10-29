@@ -1,0 +1,135 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block start %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="login-page">
+
+    <div class="login-card register-card">
+
+        <!-- Header -->
+        <div class="login-brand">
+            <div class="brand-icon">Register Your Account</div>
+            <h1>Create Account</h1>
+            <p>Join us today and get started</p>
+        </div>
+
+        <!-- Registration Form -->
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="login-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <!-- Full Name -->
+            <div class="login-field">
+                <label for="full_name">Full Name</label>
+                <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <!-- Username -->
+            <div class="login-field">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Choose a username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <!-- Email -->
+            <div class="login-field">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <!-- Password -->
+            <div class="login-field">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="login-field">
+                <label for="confirm_password">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="Re-enter your password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+            </div>
+
+            <!-- Terms -->
+            <div class="login-options">
+                <label class="remember-option">
+                    <input
+                        type="checkbox"
+                        name="terms"
+                        required
+                    >
+                    <span>I agree to the terms and conditions</span>
+                </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="login-button">
+                Create Account
+                <span aria-hidden="true">&rarr;</span>
+            </button>
+
+        </form>
+
+        <!-- Footer -->
+        <div class="login-footer">
+            <p>
+                Already have an account?
+                <a href="{% url 'login' %}">Sign In</a>
+            </p>
+        </div>
+
+    </div>
+
+    <p class="login-copyright">
+        &copy; 2026 Your Website. All rights reserved.
+    </p>
+
+</div>
+
+{% endblock %}
