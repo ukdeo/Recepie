@@ -1,0 +1,16 @@
+
+# Python virtual environment folder
+env/
+
+# Home folder
+Home/
+
+# Django database
+db.sqlite3
+
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
