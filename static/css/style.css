@@ -1,0 +1,82 @@
+
+/* =========================
+   General
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #292929;
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #e85d04;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444444;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e85d04;
+}
+
+
+/* Login Button */
+
+.login-btn {
+    border: 1px solid #e85d04;
+    padding: 9px 18px;
+    border-radius: 7px;
+    color: #e85d04 !important;
+}
+
+.login-btn:hover {
+    background: #fff0e6;
+}
+
+
+/* Register Button */
+
+.register-btn {
+    background: #e85d04;
+    color: white !important;
+    padding: 10px 19px;
+    border-radius: 7px;
+}
+
+.register-btn:hover {
+    background: #d94f00;
+}

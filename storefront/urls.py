@@ -27,6 +27,7 @@ urlpatterns = [
     path('about/',views.about, name ="about"),
     path('login/',recepie_views.login, name ="login"),
     path('register/',recepie_views.register, name ="register"),
+    path('logout/',recepie_views.logout_view, name ="logout"),
 
     path('recepie/', recepie_views.recepie, name='recepie'),
     path('admin/', admin.site.urls),

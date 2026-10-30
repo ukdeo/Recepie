@@ -15,9 +15,13 @@
             RecipeHub is a place where food lovers can discover new dishes,
             share their favorite recipes, and inspire others to enjoy cooking.
         </p>
-        <a href="{% url 'login' %}" class="about-btn">
-            Explore Recipes →
-        </a>
+        <a href="{% if request.user.is_authenticated %}{% url 'recepie' %}{% else %}{% url 'login' %}{% endif %}"class = "about-btn">
+                {% if request.user.is_authenticated %}
+                Add Recipes →
+                {% else %}
+                Login in to add Recepie →
+                {% endif %}
+            </a>
     </div>
 
     <div class="about-hero-image">

@@ -3,9 +3,11 @@ from .models import Recepie
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 # Create your views here.
-
+@login_required(login_url='login')
 def recepie(request):
     if request.method == 'POST':
         data = request.POST
@@ -32,19 +34,36 @@ def recepie(request):
 
 
 def login(request):
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password
+        )
 
         if user is not None:
             auth_login(request, user)
+
+            # Remember me
+            if request.POST.get('Remember_me'):
+                request.session.set_expiry(1209600)  # 14 days
+            else:
+                request.session.set_expiry(0)  # Until browser closes
+
             return redirect('recepie')
 
         messages.error(request, 'Invalid username or password')
         return redirect('login')
 
     return render(request, 'login.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
 
 #for login and register we will use the built in user model of django which is imported above
 def register(request):

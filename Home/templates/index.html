@@ -32,9 +32,12 @@
         </p>
 
         <div class="hero-buttons">
-
-            <a href="{% url 'login' %}" class="primary-btn">
+            <a href="{% if request.user.is_authenticated %}{% url 'recepie' %}{% else %}{% url 'login' %}{% endif %}" class="primary-btn">
+                {% if request.user.is_authenticated %}
                 Explore Recipes →
+                {% else %}
+                Login to Explore →
+                {% endif %}
             </a>
 
             <a href="{% url 'register' %}" class="secondary-btn">
@@ -49,7 +52,7 @@
     <div class="hero-image">
 
         <div class="food-emoji">
-            🍲
+             <img src="{% static 'css/images/food.png ' %}" , height = 480px ,alt="Food">
         </div>
 
     </div>
@@ -154,8 +157,13 @@
         to create something delicious.
     </p>
 
-    <a href="{% url 'recepie' %}">
-        Add Your Recipe
+        <a href="{% if request.user.is_authenticated %}{% url 'recepie' %}{% else %}{% url 'register' %}{% endif %}" >
+        {% if request.user.is_authenticated %}
+                 Add Your Recipe →
+                {% else %}
+                Register to Add →
+                {% endif %}
+       
     </a>
 
 </section>

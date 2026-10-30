@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{page}}</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
 
 <!-- =========================
      Navbar
 ========================= -->
+
 
 <nav class="navbar">
 
@@ -36,6 +38,7 @@
             Contact
         </a>
 
+        {%if not request.user.is_authenticated%}
         <a href="{% url 'login' %}" class="login-btn">
             Login
         </a>
@@ -43,6 +46,13 @@
         <a href="{% url 'register' %}" class="register-btn">
             Register
         </a>
+        {%else%}
+
+
+        <a href="{% url 'logout' %}" class="logout-btn">
+            Logout
+        </a>
+        {%endif%}
 
     </div>
 
